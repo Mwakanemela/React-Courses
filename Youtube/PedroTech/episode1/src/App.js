@@ -1,24 +1,27 @@
 import './App.css';
 
 function App() {
-  const name = <h1>Mwaka</h1>
-  const numbers = <p>1</p>
-  const email = <h2>email@getDefaultNormalizer.com</h2>
-  const user = (
-    <div>
-{name}
-    {numbers}
-    {email}
-    </div>
-    
-  );
+  
+  
   return (
     <div className="App">
-      {user}
-      {user}
-      {user}
+      <Job salary={90000} position="Senior SDE" company="Amazon"/>
+
+<Job salary={80000} position="Senior SDE" company="Amazon"/>
+<Job salary={90000} position="Senior SDE" company="Amazon"/>
+
     </div>
   );
+}
+const Job = (probs) => {
+  return(
+    <div>
+      <h1>{probs.salary}</h1>
+      <p>{probs.position}</p>
+      <p>{probs.company}</p>
+    </div>
+    
+  )
 }
 
 export default App;
