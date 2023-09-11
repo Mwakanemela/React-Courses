@@ -2,7 +2,7 @@ import './App.css';
 import {User} from './User'
 function App() {
   const users = [
-    {name: "Sibo", year: 1994},
+    {name: "Sibo", year: 1998},
     {name: "Mwaka", year:2002},
     {name: "Angellah", year: 2006},
     {name: "Joshua", year:2012}
