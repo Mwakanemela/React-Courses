@@ -1,5 +1,5 @@
 import './App.css';
-
+import {User} from './User'
 function App() {
   const users = [
     {name: "Sibo", year: 1994},
@@ -10,10 +10,8 @@ function App() {
   return (
     <div className="App">
         {users.map((user, key) => {
-          return (
-            <div>
-              {user.name} {user.year}
-            </div>
+          return ( 
+            <User name={user.name}  year={user.year} />
           )
         })}
     </div>
