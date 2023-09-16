@@ -2,14 +2,14 @@ import './App.css';
 import {useState} from "react"
  function App() {
   
-   var [inputValue, setInputValue] = useState("")
-   const handleInputChange = (event) => {
-     setInputValue(event.target.value)
+   var [showText, setShowText] = useState(true)
+   const toggleText = () => {
+     setShowText(!showText)
    }
   return (
     <div className="App">
-      <input type='text' onChange={handleInputChange}/>
-      {inputValue}
+      <button onClick={toggleText}>Toggle Text</button>
+      {showText && <h1>Change visibility</h1>}
     </div>
   );
 }
