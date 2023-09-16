@@ -28,8 +28,13 @@ body {
   flex-direction: column;
 }
 .task button {
-  width: 25px;
-  height: 20px;
+  margin: 8px;
+  padding: 10px;
   margin-left: 20px;
   text-align: center;
+}
+
+.task {
+  width: 50%;
+  margin: 8px;
 }
