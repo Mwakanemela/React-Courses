@@ -11,12 +11,14 @@ console.log('Hello...')
 fs.writeFile(path.join(__dirname, 'files', 'reply.txt'), 'Nice to learn node.',(err) => {
     if (err) throw err;
     console.log('data was written successfully')
-})
 
-fs.appendFile(path.join(__dirname, 'files', 'append.txt'), 'append text.',(err) => {
+    fs.appendFile(path.join(__dirname, 'files', 'reply.txt'), '\nappend text.',(err) => {
     if (err) throw err;
     console.log('data was appended successfully')
 })
+})
+
+
 process.on('uncaughtException', err => {
     console.error(`uncaught error: ${err}`)
     process.exit(1)
