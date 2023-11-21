@@ -14,7 +14,12 @@ fs.writeFile(path.join(__dirname, 'files', 'reply.txt'), 'Nice to learn node.',(
 
     fs.appendFile(path.join(__dirname, 'files', 'reply.txt'), '\nappend text.',(err) => {
     if (err) throw err;
-    console.log('data was appended successfully')
+        console.log('data was appended successfully')
+        
+        fs.rename(path.join(__dirname, 'files', 'reply.txt') , path.join(__dirname, 'files', 'newreply.txt'), (err) => {
+            if (err) throw err;
+            console.log('rename successfully')
+        })
 })
 })
 
