@@ -8,6 +8,21 @@ const fileOps = async () => {
             path.join(__dirname, 'files', 'starter.txt'), 'utf-8'
         )
         console.log(data)
+        await fsPromises.writeFile(
+            path.join(__dirname, 'files', 'promiseWrite.txt'), data
+        )
+        await fsPromises.appendFile(
+            path.join(__dirname, 'files', 'promiseWrite.txt'), '\nbackend developer'
+        )
+        await fsPromises.rename(
+            path.join(__dirname, 'files', 'promiseWrite.txt'), 
+            path.join(__dirname, 'files', 'promiseWriteRename.txt')
+        )
+
+        const newData = await fsPromises.readFile(
+            path.join(__dirname, 'files', 'promiseWriteRename.txt'), 'utf-8'
+        )
+        console.log(newData)
     } catch (err) {
         console.error(err)
     }
