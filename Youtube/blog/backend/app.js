@@ -1,12 +1,14 @@
 import express from "express";
 import mongoose from "mongoose";
 import router from "./routes/user-routes.js";
+import blogRouter from "./routes/blog-routes.js";
 
 
 const app = express();
 
 app.use(express.json());
 app.use('/api/users', router);
+app.use('/api/blog', blogRouter);
 
 mongoose.connect(
     "mongodb+srv://chepesi:chepesi@nodecourse.zczeah6.mongodb.net/chepesi-blog?retryWrites=true&w=majority"
