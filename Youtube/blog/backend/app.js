@@ -1,10 +1,15 @@
 import express from "express";
 import mongoose from "mongoose";
+import router from "./routes/user-routes.js";
+
 
 const app = express();
 
+app.use(express.json());
+app.use('/api/users', router);
+
 mongoose.connect(
-    "mongodb+srv://chepesi:chepesi@nodecourse.zczeah6.mongodb.net/?retryWrites=true&w=majority"
+    "mongodb+srv://chepesi:chepesi@nodecourse.zczeah6.mongodb.net/chepesi-blog?retryWrites=true&w=majority"
 ).then(() => app.listen(5000))
     .then(() => console.log("connected to mongodb and server is listening on port 5000")
 ).catch((err) => console.log(err));
