@@ -11,8 +11,9 @@ import {
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { authActions } from "../store";
+import { useStyles } from "./utils";
 const Header = () => {
-
+  const classes = useStyles();
   const dispath = useDispatch();
   const isLoggedIn = useSelector((state) => state.isLoggedIn);
 
@@ -26,7 +27,7 @@ const Header = () => {
       }}
     >
       <Toolbar>
-        <Typography variant="h4">
+        <Typography className={classes.font} variant="h4">
           BlogsApp
         </Typography>
         {isLoggedIn && (
@@ -37,19 +38,19 @@ const Header = () => {
               onChange={(e, val) => setValue(val)}
             >
               <Tab
-                
+                className={classes.font}
                 LinkComponent={Link}
                 to="/blogs"
                 label="All Blogs"
               />
               <Tab
-                
+                className={classes.font}
                 LinkComponent={Link}
                 to="/myBlogs"
                 label="My Blogs"
               />
               <Tab
-                
+                className={classes.font}
                 LinkComponent={Link}
                 to="/blogs/add"
                 label="Add Blog"

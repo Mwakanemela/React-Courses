@@ -2,12 +2,15 @@ import express from "express";
 import mongoose from "mongoose";
 import router from "./routes/user-routes.js";
 import blogRouter from "./routes/blog-routes.js";
-
+import cors from 'cors';
 
 const app = express();
 
+// Enable CORS for all routes
+app.use(cors());
+
 app.use(express.json());
-app.use('/api/users', router);
+app.use('/api/user', router);
 app.use('/api/blog', blogRouter);
 
 mongoose.connect(
