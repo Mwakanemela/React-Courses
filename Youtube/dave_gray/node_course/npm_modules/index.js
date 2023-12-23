@@ -6,8 +6,8 @@ class MyEmmiter extends EventEmitter{ }
 //initilize object
 const myEmitter = new MyEmmiter()
 
-myEmitter.on('log', (msg) => logEvents(msg))
+myEmitter.on('log', (msg, username) => logEvents(msg, username))
 
 setTimeout(() => {
-    myEmitter.emit('log', 'Log event emitted')
+    myEmitter.emit('log', 'Log event emitted', 'Mwakanemela kayange')
 }, 2000)
