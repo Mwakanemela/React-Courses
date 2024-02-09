@@ -4,4 +4,5 @@ body {
 
 .columns {
   column-count: 4;
+  column-width: 250px;
 }
